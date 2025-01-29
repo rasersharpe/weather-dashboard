@@ -15,7 +15,7 @@ class HistoryService {
     if (cities.includes(city)) {
       console.log("City is already in your history.");
     } else {
-      cities.push(city);
+      cities.push({ name: city });
       fs.writeFile("db/db.json", JSON.stringify(cities, null, 2));
       console.log(`${city} has been added to your history.`);
     }
