@@ -1,18 +1,8 @@
-// import dayjs, { type Dayjs } from "dayjs";
 import { type Dayjs } from "dayjs";
 import dotenv from "dotenv";
 dotenv.config();
 
-// TODO: Define an interface for the Coordinates object
-// interface Coordinates {
-//   name: string;
-//   lat: number;
-//   lon: number;
-//   country: string;
-//   state: string;
-// }
-
-// TODO: Define a class for the Weather object
+// Define a class for the Weather object
 class Weather {
   city: string;
   date: Dayjs | string;
@@ -40,7 +30,7 @@ class Weather {
   }
 }
 
-// TODO: Complete the WeatherService class
+// WeatherService class
 class WeatherService {
   private baseURL?: string;
 
@@ -53,9 +43,8 @@ class WeatherService {
 
     this.apiKey = process.env.API_KEY || "";
   }
-  // TODO: method to fetch weather based on city
+  // Method to fetch weather based on city
 
-  // TODO: method to fetch 5 day forecast based on lon and lat
   async getForecast(cityName: string) {
     try {
       const url = `${this.baseURL}forecast?q=${cityName}&units=imperial&appid=${this.apiKey}`;
@@ -81,10 +70,7 @@ class WeatherService {
     } catch (error) {
       console.log(error);
     }
-    // .then((data) => console.log(data));
   }
-
-  // TODO: method to build and return your array of weather objects
 }
 
 export default new WeatherService();
